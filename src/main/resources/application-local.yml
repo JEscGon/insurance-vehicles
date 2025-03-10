@@ -10,8 +10,12 @@ spring:
     show-sql: true
     generate-ddl: false
   flyway:
-    enabled: false
+    enabled: true
     locations: classpath:db/migration
-
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
 server:
     port: 8081
