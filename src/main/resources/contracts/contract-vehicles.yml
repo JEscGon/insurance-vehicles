@@ -130,7 +130,7 @@ paths:
         - vehicles
       summary: Encuentra un vehículo por matrícula
       description: Devuelve un vehículo buscando por su matrícula
-      operationId: getVehicleByMatricula
+      operationId: findByMatricula
       parameters:
         - name: matricula
           in: path

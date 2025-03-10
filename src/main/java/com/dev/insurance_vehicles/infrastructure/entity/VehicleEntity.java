@@ -15,10 +15,10 @@ import java.time.LocalDate;
 public class VehicleEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "id_user", nullable = false)
     private Long idUser;
 
     @Column(unique = true , nullable = false)
@@ -30,7 +30,7 @@ public class VehicleEntity {
     @Column(nullable = false)
     private String marca;
 
-    @Column(nullable = false)
+    @Column(name = "fecha_fabricacion",nullable = false)
     private LocalDate fechaFabricacion;
 
     @Column(name = "date_of_registration" ,nullable = true)

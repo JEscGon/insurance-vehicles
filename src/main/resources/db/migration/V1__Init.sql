@@ -1,6 +1,6 @@
 CREATE TABLE vehicles (
     id BIGSERIAL PRIMARY KEY,
-    user_id BIGINT NOT NULL,
+    id_user BIGINT NOT NULL,
     matricula VARCHAR(255) UNIQUE NOT NULL,
     km BIGINT NOT NULL,
     marca VARCHAR(255) NOT NULL,
