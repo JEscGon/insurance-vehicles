@@ -1,0 +1,41 @@
+package com.dev.insurance_vehicles.infrastructure.entity;
+
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDate;
+
+@Getter
+@Setter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "vehicles")
+public class VehicleEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(nullable = false)
+    private Long idUser;
+
+    @Column(unique = true , nullable = false)
+    private String matricula;
+
+    @Column(nullable = false)
+    private Long km;
+
+    @Column(nullable = false)
+    private String marca;
+
+    @Column(nullable = false)
+    private LocalDate fechaFabricacion;
+
+    @Column(name = "date_of_registration" ,nullable = true)
+    private LocalDate dateOfRegistration;
+    @Column(name = "date_of_last_update" ,nullable = true)
+    private LocalDate dateOfLastUpdate;
+
+}
