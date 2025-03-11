@@ -4,6 +4,7 @@ import com.dev.insurance_vehicles.application.domain.Vehicle;
 import com.dev.insurance_vehicles.application.repository.VehicleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,7 @@ public class VehicleService {
 
     private final VehicleRepository vehicleRepository;
 
+    @Transactional
     public void save(Vehicle vehicle) {
         vehicleRepository.save(vehicle);
     }

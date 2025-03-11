@@ -2,6 +2,7 @@ package com.dev.insurance_vehicles.infrastructure.repository;
 
 import com.dev.insurance_vehicles.application.domain.Vehicle;
 import com.dev.insurance_vehicles.application.repository.VehicleRepository;
+import com.dev.insurance_vehicles.infrastructure.entity.VehicleEntity;
 import com.dev.insurance_vehicles.infrastructure.mapper.VehicleMapper;
 import com.dev.insurance_vehicles.infrastructure.repository.jpa.VehicleJpaRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ public class VehicleRepositoryImpl implements VehicleRepository {
             var aux = vehicleJpaRepository.findById(vehicle.getId());
             if(aux.isPresent()){
                 Vehicle existingVehicle = vehicleMapper.fromEntityToDomain(aux.get());
-                vehicleMapper.updateVehicleFromExisting( existingVehicle, vehicle);
+                vehicleMapper.updateVehicleFromExisting(existingVehicle, vehicle);
             }
             vehicle.setDateOfLastUpdate(LocalDate.now());
         }
