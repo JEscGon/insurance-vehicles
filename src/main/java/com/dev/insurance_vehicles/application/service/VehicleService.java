@@ -34,7 +34,4 @@ public class VehicleService {
         vehicleRepository.deleteById(Long.valueOf(id));
     }
 
-    public void updateVehicle(Long vehicleId, Vehicle vehicle) {
-        vehicleRepository.save(vehicle);
-    }
 }
