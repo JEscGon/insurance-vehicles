@@ -69,6 +69,12 @@ public class VehicleController implements VehiclesApi {
         return new ResponseEntity<>(vehicleDtoList, HttpStatus.OK);
     }
 
+    @Override
+    public ResponseEntity<VehicleDto> findByMatricula(String matricula) {
+        return vehicleService.findByMatricula(matricula)
+                .map(vehicle -> new ResponseEntity<>(vehicleDtoMapper.fromDomainToDto(vehicle), HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
 
 
 }
